@@ -17,7 +17,7 @@ const AllProjects = () => {
 
   // Extended projects data
   const allProjects = [
-    {
+  {
   id: 1,
   title: "ShopSphere",
   description: "E-commerce platform (repo name: ShopSphere). See README in repo for full details.",
@@ -36,7 +36,7 @@ const AllProjects = () => {
   image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
   tags: ["TypeScript", "Utility"],
   category: "Utility",
-  liveUrl: "#",
+  liveUrl: "https://https://password-generator-lime-five-20.vercel.app/",
   githubUrl: "https://github.com/Kash1shTyagi/Password-Generator",
   featured: true,
   date: "2025-07-14"
@@ -55,28 +55,17 @@ const AllProjects = () => {
 },
 {
   id: 4,
-  title: "Military Asset Frontend",
-  description: "React + Tailwind frontend for the Military Asset Management System: asset creation, filtering by base, and role-based views.",
+  title: "Military Asset Management",
+  description: "React + Tailwind frontend for the Military Asset Management System: asset creation, filtering by base, and role-based views. Backend using Node.js and Sequelize. Implements role-based access control and asset CRUD endpoints.",
   image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8",
-  tags: ["React", "TypeScript", "Tailwind"],
+  tags: ["React", "TypeScript", "Tailwind", "Node.js", "JavaScript", "Sequelize"],
   category: "Full Stack",
-  liveUrl: "#",
+  liveUrl: "https://millitary-asset-frontend.vercel.app/",
   githubUrl: "https://github.com/Kash1shTyagi/millitary-asset-frontend",
   featured: true,
   date: "2025-05-25"
 },
-{
-  id: 5,
-  title: "Military Asset Backend",
-  description: "Backend for the Military Asset Management System using Node.js and Sequelize. Implements role-based access control and asset CRUD endpoints.",
-  image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b",
-  tags: ["Node.js", "JavaScript", "Sequelize"],
-  category: "Backend",
-  liveUrl: "#",
-  githubUrl: "https://github.com/Kash1shTyagi/millitary-asset-backend",
-  featured: true,
-  date: "2025-05-25"
-},
+
 {
   id: 6,
   title: "FaceSense",
@@ -139,51 +128,15 @@ const AllProjects = () => {
 },
 {
   id: 11,
-  title: "Math Calculator (full)",
+  title: "Math Calculator",
   description: "Math calculator project (frontend + backend repos) providing calculation APIs and a web UI for interactive math tools.",
   image: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107",
-  tags: ["Python", "TypeScript"],
+  tags: ["Python", "TypeScript", "React", "Flask"],
   category: "Full Stack",
-  liveUrl: "#",
+  liveUrl: "https://mathcalculator-frontend.onrender.com",
   githubUrl: "https://github.com/Kash1shTyagi/mathCalculator",
   featured: false,
   date: "2025-05-01"
-},
-{
-  id: 12,
-  title: "Math Calculator Frontend",
-  description: "Frontend for Math Calculator (UI, input validation, and display components).",
-  image: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107",
-  tags: ["TypeScript", "React"],
-  category: "Frontend",
-  liveUrl: "#",
-  githubUrl: "https://github.com/Kash1shTyagi/mathCalculator_frontend",
-  featured: false,
-  date: "2025-05-01"
-},
-{
-  id: 13,
-  title: "Math Calculator Backend",
-  description: "Backend for Math Calculator (Python/Flask) exposing calculation APIs and example endpoints.",
-  image: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107",
-  tags: ["Python", "Flask"],
-  category: "Backend",
-  liveUrl: "#",
-  githubUrl: "https://github.com/Kash1shTyagi/mathCalculator_backend",
-  featured: false,
-  date: "2025-05-01"
-},
-{
-  id: 14,
-  title: "Password-Generator (duplicate)",
-  description: "Utility repo — alternate/duplicate entry for the Password Generator project.",
-  image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-  tags: ["TypeScript"],
-  category: "Utility",
-  liveUrl: "#",
-  githubUrl: "https://github.com/Kash1shTyagi/Password-Generator",
-  featured: false,
-  date: "2025-07-14"
 },
 {
   id: 15,
@@ -223,19 +176,19 @@ const AllProjects = () => {
 },
 {
   id: 18,
-  title: "Adobe India Hackathon 1A",
+  title: "PageSense",
   description: "Hackathon submission (Challenge 1A).",
   image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
   tags: ["Python"],
   category: "Competition",
-  liveUrl: "#",
-  githubUrl: "https://github.com/Kash1shTyagi/Adobe-India-Hackathon25-Challenge-1A",
+  liveUrl: "https://page-sense-one.vercel.app",
+  githubUrl: "https://github.com/Kash1shTyagi/PageSense",
   featured: false,
   date: "2025-07-28"
 },
 {
   id: 19,
-  title: "Adobe India Hackathon 1B",
+  title: "AskPDF",
   description: "Hackathon submission (Challenge 1B).",
   image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
   tags: ["Python"],
@@ -245,20 +198,15 @@ const AllProjects = () => {
   featured: false,
   date: "2025-07-28"
 },
-{
-  id: 20,
-  title: "EUIPO-Indian-Trademark-Scraper (duplicate)",
-  description: "Duplicate entry for the Trademark Scraper repo.",
-  image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
-  tags: ["Python"],
-  category: "Tooling",
-  liveUrl: "#",
-  githubUrl: "https://github.com/Kash1shTyagi/EUIPO-Indian-Trademark-Scraper",
-  featured: false,
-  date: "2025-07-24"
-}
+
 
   ];
+  
+  const hasLive = (url) => {
+    if (!url) return false;
+    const trimmed = String(url).trim();
+    return trimmed !== '#' && trimmed !== '' && trimmed !== 'null' && trimmed !== 'undefined';
+  };
 
   // Debounce search query
   useEffect(() => {
@@ -481,15 +429,17 @@ const AllProjects = () => {
                   {/* Overlay content */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                     <div className="flex gap-3">
-                      <Button 
-                        size="sm" 
-                        className="bg-primary/90 hover:bg-primary shadow-lg backdrop-blur-sm"
-                        asChild
-                      >
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
+                      {hasLive(project.liveUrl) && (
+    <Button 
+      size="sm" 
+      className="bg-primary/90 hover:bg-primary shadow-lg backdrop-blur-sm"
+      asChild
+    >
+      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+        <ExternalLink className="w-4 h-4" />
+      </a>
+    </Button>
+  )}
                       
                       <Button 
                         size="sm" 
@@ -536,16 +486,18 @@ const AllProjects = () => {
                   </div>
                   
                   <div className="flex gap-3">
-                    <Button 
-                      size="sm" 
-                      className="flex-1 bg-gradient-primary hover:shadow-glow transition-all duration-300"
-                      asChild
-                    >
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </a>
-                    </Button>
+                    {hasLive(project.liveUrl) && (
+    <Button 
+      size="sm" 
+      className="flex-1 bg-gradient-primary hover:shadow-glow transition-all duration-300"
+      asChild
+    >
+      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+        <ExternalLink className="w-4 h-4 mr-2" />
+        Live Demo
+      </a>
+    </Button>
+  )}
                     
                     <Button 
                       size="sm" 

@@ -5,55 +5,69 @@ import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
-      tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "A collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.",
+        {
+      title: "PageSense",
+      description: "Hackathon submission (Challenge 1A).",
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
-      tags: ["Vue.js", "Socket.io", "MongoDB", "Express"],
-      liveUrl: "#",
-      githubUrl: "#"
+      tags: ["Python"],
+      category: "Competition",
+      liveUrl: "https://page-sense-one.vercel.app",
+      githubUrl: "https://github.com/Kash1shTyagi/PageSense",
     },
-    {
-      title: "AI-Powered Analytics Dashboard",
-      description: "An intelligent analytics platform that provides insights through machine learning algorithms and beautiful data visualizations.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      tags: ["Python", "React", "TensorFlow", "D3.js"],
-      liveUrl: "#",
-      githubUrl: "#"
+        {
+      title: "Password Generator",
+      description: "A utility for generating secure passwords with configurable length, character sets, and strength indicators. Implemented in TypeScript.",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      tags: ["TypeScript", "Utility"],
+      category: "Utility",
+      liveUrl: "https://https://password-generator-lime-five-20.vercel.app/",
+      githubUrl: "https://github.com/Kash1shTyagi/Password-Generator",
     },
+   
+
     {
-      title: "Social Media Mobile App",
-      description: "A cross-platform mobile application for social networking with real-time messaging, photo sharing, and location-based features.",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113",
-      tags: ["React Native", "Firebase", "Redux", "Maps API"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Cryptocurrency Tracker",
-      description: "A real-time cryptocurrency tracking application with portfolio management, price alerts, and market analysis tools.",
-      image: "https://images.unsplash.com/photo-1640340434855-6084b1f4901c",
-      tags: ["Next.js", "Chart.js", "CoinGecko API", "Prisma"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Learning Management System",
-      description: "An educational platform with course creation, student progress tracking, video streaming, and interactive assessments.",
+      title: "Military Asset Management",
+      description: "React + Tailwind frontend for the Military Asset Management System: asset creation, filtering by base, and role-based views. Backend using Node.js and Sequelize. Implements role-based access control and asset CRUD endpoints.",
       image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8",
-      tags: ["React", "AWS S3", "GraphQL", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#"
-    }
+      tags: ["React", "TypeScript", "Tailwind", "Node.js", "JavaScript", "Sequelize"],
+      category: "Full Stack",
+      liveUrl: "https://millitary-asset-frontend.vercel.app/",
+      githubUrl: "https://github.com/Kash1shTyagi/millitary-asset-frontend",
+    },
+    {
+      title: "Math Calculator",
+      description: "Math calculator project (frontend + backend repos) providing calculation APIs and a web UI for interactive math tools.",
+      image: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107",
+      tags: ["Python", "TypeScript", "React", "Flask"],
+      category: "Full Stack",
+      liveUrl: "https://mathcalculator-frontend.onrender.com",
+      githubUrl: "https://github.com/Kash1shTyagi/mathCalculator",
+    },
+
+    {
+      title: "EUIPO Indian Trademark Scraper",
+  description: "Python scraper that gathers trademark data (EUIPO / Indian). MIT-licensed tooling for automated scraping and data export.",
+  image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+  tags: ["Python", "Scraping", "BeautifulSoup"],
+  category: "Tooling",
+  liveUrl: "#",
+  githubUrl: "https://github.com/Kash1shTyagi/EUIPO-Indian-Trademark-Scraper",
+    },
+     {
+      title: "AskPDF",
+  description: "Hackathon submission (Challenge 1B).",
+  image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
+  tags: ["Python"],
+  category: "Competition",
+  liveUrl: "#",
+  githubUrl: "https://github.com/Kash1shTyagi/Adobe-India-Hackathon25-Challenge-1B",
+    },
   ];
+  const hasLive = (url) => {
+    if (!url) return false;
+    const trimmed = String(url).trim();
+    return trimmed !== '#' && trimmed !== '' && trimmed !== 'null' && trimmed !== 'undefined';
+  };
 
   return (
     <section id="projects" className="py-32 bg-gradient-to-b from-secondary/10 via-background to-secondary/10 relative overflow-hidden">
@@ -93,15 +107,17 @@ const Projects = () => {
                 {/* Overlay content */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="flex gap-3">
-                    <Button 
-                      size="sm" 
-                      className="bg-primary/90 hover:bg-primary shadow-lg backdrop-blur-sm"
-                      asChild
-                    >
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </Button>
+                    {hasLive(project.liveUrl) && (
+    <Button 
+      size="sm" 
+      className="bg-primary/90 hover:bg-primary shadow-lg backdrop-blur-sm"
+      asChild
+    >
+      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+        <ExternalLink className="w-4 h-4" />
+      </a>
+    </Button>
+  )}
                     
                     <Button 
                       size="sm" 
@@ -138,16 +154,18 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex gap-2 sm:gap-3">
-                  <Button
-                    size="sm" 
-                    className="flex-1 bg-gradient-primary hover:shadow-glow transition-all duration-300"
-                    asChild
-                  >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                      Live Demo
-                    </a>
-                  </Button>
+                  {hasLive(project.liveUrl) && (
+    <Button 
+      size="sm" 
+      className="flex-1 bg-gradient-primary hover:shadow-glow transition-all duration-300"
+      asChild
+    >
+      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+        <ExternalLink className="w-4 h-4 mr-2" />
+        Live Demo
+      </a>
+    </Button>
+  )}
                   
                   <Button 
                     size="sm" 
